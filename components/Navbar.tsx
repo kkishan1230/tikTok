@@ -15,7 +15,7 @@ function Navbar() {
   const [user, setUser] = useState<IUser | null>();
   const [searchValue, setSearchValue] = useState("");
   const router = useRouter();
-  const { userProfile, addUser, removeUser } = useAuthStore();
+  const { userProfile, addUser, removeUser }: any = useAuthStore();
 
   useEffect(() => {
     setUser(userProfile);
