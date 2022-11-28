@@ -173,7 +173,9 @@ export const getServerSideProps = async ({
 }: {
   params: { id: string };
 }) => {
-  const res = await axios.get(`http://localhost:3000/api/post/${id}`);
+  const res = await axios.get(
+    `${process.env.NEXT_PUBLIC_BASE_URL}/api/post/${id}`
+  );
   return {
     props: { postDetails: res.data },
   };

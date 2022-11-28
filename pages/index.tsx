@@ -32,7 +32,9 @@ const Home = ({ videos }: IProps) => {
 export default Home;
 
 export const getServerSideProps = async () => {
-  let { data } = await axios.get(`http://localhost:3000/api/post`);
+  let { data } = await axios.get(
+    `${process.env.NEXT_PUBLIC_BASE_URL}/api/post`
+  );
   return {
     props: {
       videos: data,
